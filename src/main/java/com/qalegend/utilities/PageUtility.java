@@ -4,13 +4,13 @@ package com.qalegend.utilities;
 import java.util.Set;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 
 public class PageUtility {
-	
 	
  public String getPageTitle(WebDriver driver) {
 	 String pageTitle = driver.getTitle();
@@ -121,7 +121,25 @@ public class PageUtility {
  public String getErrorMessageText(WebElement element) {
 	String errorMessage=element.getText();
 	return errorMessage;
-	 
  }
+ public void javaScriptValue(WebElement element,String text,WebDriver driver)
+	{
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		 js.executeScript("arguments[0].value='text';", element);
+		
+	}
+	public void javaScriptClick(WebElement element,WebDriver driver)
+	{
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		 js.executeScript("arguments[0].click();", element);
+		
+	}
+	public Boolean isElementDisplayed(WebElement element)
+	{
+		boolean value=element.isDisplayed();
+			return value;
+		
+	}
+	
 
 }
