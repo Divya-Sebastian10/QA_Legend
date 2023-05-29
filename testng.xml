@@ -4,8 +4,9 @@
 	<listeners>
 		<listener class-name="com.qalegend.utilities.Listener" />
 		<listener class-name="com.qalegend.extentmanager.ExtentReport" />
+		<!--<listener class-name="com.qalegend.utilities.RetryListener"/>-->
 	</listeners>
-  <test thread-count="5" name="Test">
+  <test thread-count="1" name="Test">
 	  <parameter name="browser" value="chrome"></parameter>
 	   <groups>
             <run>
@@ -14,8 +15,13 @@
             </run>
         </groups>
     <classes>
-      <class name="com.qalegend.testscripts.LoginTest"/>
-	  <class name="com.qalegend.testscripts.HomeTest"/>
+     <!-- <class name="com.qalegend.testscripts.LoginTest"/>
+      <class name="com.qalegend.testscripts.AppTest"/>
+	  <class name="com.qalegend.testscripts.HomeTest"/>-->
+	   <class name="com.qalegend.testscripts.UserManagementTest"/>
+	 
+	   
+	 
       <!--<methods>
 		  <include name ="verifyLoginTitle"/>
 		   <include name ="verifyLogin"/>

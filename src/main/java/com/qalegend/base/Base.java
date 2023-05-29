@@ -51,7 +51,7 @@ public class Base {
 		  getBrowser(b);
 		  String url=prop.getProperty("url");
 		  driver.get(url);
-		  		 
+		  //closeBrowser();	 
 	  }
  
   public void getBrowser(String b) {
@@ -60,8 +60,6 @@ public class Base {
 	  {
 		  System.setProperty("webdriver.http.factory", "jdk-http-client");
 		  System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+Constants.BROWSER_PATH);
-		  String current = System.getProperty("user.dir");
-	      System.out.println("Current working directory in Java : " + current);
 		  driver =new ChromeDriver();
 		  driver.manage().window().maximize();
 		  	
@@ -76,30 +74,25 @@ public class Base {
   }
  
 
-  //@AfterMethod(alwaysRun = true)
-  /*public void tearDown(ITestResult result)throws IOException {
-	  if(result.getStatus()==ITestResult.FAILURE)
-	  {
-		  TakesScreenshot takeScreenShot=(TakesScreenshot)driver;
-		  File screenshot=takeScreenShot.getScreenshotAs(OutputType.FILE);
-		  FileUtils.copyFile(screenshot,new File("./Screenshots/"+result.getName()+".png"));
-	  }
-	 // driver.quit();
-  }*/
-  /*public void failedScreenshot(String testMethodName)throws IOException {
-	 File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	 Date d=new Date();
-	 try
-	 {
-		 FileUtils.copyFile(srcFile, new File("C:\\Users\\PRAGAL\\OneDrive\\Documents\\screenshot"+testMethodName+"_"+".png"));
-		 
-	 }
-	 catch (Exception e) {
-		 
-		// TODO: handle exception
-	e.printStackTrace();
-	 }*/
-	 
+//  @AfterMethod(alwaysRun = true)
+//  public void closeBrowser(){
+//	 driver.close();
+//  }
+//  public void failedScreenshot(String testMethodName)throws IOException {
+//		 File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		 Date d=new Date();
+//		 try
+//		 {
+//			 FileUtils.copyFile(srcFile, new File("C:\\Users\\ASUS\\Documents\\Screenshots"+testMethodName+"_"+".png"));
+//			 
+//		 }
+//		 catch (Exception e) {
+//			 
+//			// TODO: handle exception
+//		e.printStackTrace();
+//		 }
+//		 
+//		  }
 	  }
   
   
